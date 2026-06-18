@@ -40,15 +40,232 @@
 		<!-- custom css -->
 		<link rel="stylesheet" href="css/templatemo-style.css">
 		<style>
+			/* Crown Logic Brand Colors */
+			:root {
+				--midnight: #080F1A;
+				--dark-blue: #0F2744;
+				--electric-blue: #3B9EFF;
+				--light-text: #E8F4FF;
+				--medium-blue: #163E6E;
+				--accent-blue: #5BB8FF;
+			}
+
+			/* Global overrides */
+			body {
+				background: var(--midnight);
+				color: #ccc;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				color: var(--light-text);
+			}
+
+			a {
+				color: var(--electric-blue);
+				transition: color 0.3s ease;
+			}
+
+			a:hover {
+				color: var(--accent-blue);
+			}
+
+			/* Navbar */
+			.templatemo-nav {
+				background: var(--midnight) !important;
+				border-bottom: 2px solid var(--dark-blue);
+			}
+
 			.navbar-brand {
 				font-weight: 700;
 				font-size: 18px;
 				letter-spacing: 1px;
+				color: var(--light-text) !important;
 			}
+
 			.navbar-brand img {
 				height: 35px;
 				margin-right: 8px;
 				display: inline-block;
+			}
+
+			.navbar-default .navbar-nav > li > a {
+				color: #aaa !important;
+				transition: color 0.3s ease;
+			}
+
+			.navbar-default .navbar-nav > li > a:hover {
+				color: var(--electric-blue) !important;
+			}
+
+			/* Preloader */
+			.preloader {
+				background: var(--midnight);
+			}
+
+			.sk-spinner-rotating-plane.sk-spinner {
+				background-color: var(--electric-blue);
+			}
+
+			/* Sections */
+			section {
+				background: var(--midnight);
+			}
+
+			#home {
+				background: linear-gradient(135deg, var(--midnight) 0%, var(--dark-blue) 100%);
+			}
+
+			#divider {
+				background: var(--dark-blue);
+				padding: 60px 0;
+			}
+
+			#feature, #feature1 {
+				background: var(--midnight);
+				border-top: 1px solid var(--dark-blue);
+				padding: 80px 0;
+			}
+
+			#portfolio {
+				background: linear-gradient(135deg, var(--midnight) 0%, var(--dark-blue) 100%);
+				padding: 80px 0;
+			}
+
+			#contact {
+				background: linear-gradient(135deg, var(--dark-blue) 0%, var(--midnight) 100%);
+			}
+
+			/* Boxes and Cards */
+			.templatemo-box {
+				background: rgba(15, 39, 68, 0.5);
+				border: 1px solid var(--dark-blue);
+				border-radius: 8px;
+				padding: 30px !important;
+				transition: all 0.3s ease;
+			}
+
+			.templatemo-box:hover {
+				background: rgba(59, 158, 255, 0.1);
+				border-color: var(--electric-blue);
+				transform: translateY(-5px);
+			}
+
+			.templatemo-box i {
+				color: var(--electric-blue);
+				font-size: 40px;
+				margin-bottom: 15px;
+			}
+
+			.templatemo-box h3 {
+				color: var(--light-text);
+			}
+
+			/* Buttons */
+			.btn-primary {
+				background: var(--electric-blue);
+				border: 2px solid var(--electric-blue);
+				color: var(--midnight);
+				font-weight: 600;
+				transition: all 0.3s ease;
+			}
+
+			.btn-primary:hover {
+				background: var(--accent-blue);
+				border-color: var(--accent-blue);
+				color: var(--midnight);
+			}
+
+			.btn-warning {
+				background: var(--electric-blue);
+				border: 2px solid var(--electric-blue);
+				color: var(--midnight);
+				font-weight: 600;
+			}
+
+			.btn-warning:hover {
+				background: var(--accent-blue);
+				border-color: var(--accent-blue);
+				color: var(--midnight);
+			}
+
+			/* CTA Section */
+			#cta {
+				background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%) !important;
+				border-top: 3px solid var(--electric-blue);
+			}
+
+			/* Portfolio Items */
+			.portfolio-item {
+				background: rgba(15, 39, 68, 0.6) !important;
+				border: 2px solid var(--dark-blue) !important;
+				border-radius: 8px;
+				transition: all 0.3s ease;
+			}
+
+			.portfolio-item:hover {
+				border-color: var(--electric-blue);
+				box-shadow: 0 0 20px rgba(59, 158, 255, 0.2);
+			}
+
+			.portfolio-item h4 {
+				color: var(--electric-blue);
+			}
+
+			/* Contact Form */
+			.contact-form input,
+			.contact-form textarea {
+				background: rgba(15, 39, 68, 0.5) !important;
+				border: 1px solid var(--dark-blue) !important;
+				color: var(--light-text) !important;
+			}
+
+			.contact-form input:focus,
+			.contact-form textarea:focus {
+				background: rgba(59, 158, 255, 0.05) !important;
+				border-color: var(--electric-blue) !important;
+				box-shadow: 0 0 10px rgba(59, 158, 255, 0.3);
+			}
+
+			.contact-form input::placeholder,
+			.contact-form textarea::placeholder {
+				color: #666;
+			}
+
+			/* Text Colors */
+			.text-uppercase {
+				letter-spacing: 1px;
+			}
+
+			.tm-white {
+				color: var(--light-text);
+			}
+
+			.tm-white a {
+				color: var(--electric-blue);
+			}
+
+			/* Footer */
+			footer {
+				background: var(--dark-blue);
+				border-top: 1px solid var(--dark-blue);
+				padding: 30px 0;
+			}
+
+			footer a {
+				color: var(--electric-blue);
+				text-decoration: none;
+			}
+
+			footer a:hover {
+				color: var(--accent-blue);
+			}
+
+			/* Responsive */
+			@media (max-width: 768px) {
+				.navbar-brand img {
+					height: 28px;
+					margin-right: 6px;
+				}
 			}
 		</style>
 
@@ -170,23 +387,23 @@
 				<div class="row">
 					<div class="col-md-12 wow bounceIn">
 						<h2 class="text-uppercase">Our Portfolio</h2>
-						<p>Real projects. Real results. Here's what we've built.</p>
+						<p style="color: #aaa;">Real projects. Real results. Here's what we've built.</p>
 					</div>
 					<div class="col-md-6 wow fadeIn" data-wow-delay="0.4s">
-						<div class="portfolio-item" style="padding: 30px; border: 1px solid #e0e0e0; border-radius: 5px; background: #f9f9f9;">
-							<h4 style="color: #333; margin-bottom: 10px;">FitLevel</h4>
-							<p style="color: #666; margin-bottom: 15px;"><strong>Project Type:</strong> Mobile Application</p>
-							<p style="color: #666; margin-bottom: 15px;">A comprehensive fitness tracking application that helps users achieve their health goals through personalized workout plans, progress tracking, and community engagement.</p>
-							<p style="color: #666; margin-bottom: 10px;"><strong>Impact:</strong> Delivered on time, exceeding user engagement targets by 35% in the first month.</p>
-							<p style="color: #666;"><strong>Tech Stack:</strong> React Native, Node.js, Firebase</p>
+						<div class="portfolio-item" style="padding: 30px;">
+							<h4 style="margin-bottom: 10px;">FitLevel</h4>
+							<p style="margin-bottom: 15px;"><strong>Project Type:</strong> Mobile Application</p>
+							<p style="margin-bottom: 15px;">A comprehensive fitness tracking application that helps users achieve their health goals through personalized workout plans, progress tracking, and community engagement.</p>
+							<p style="margin-bottom: 10px;"><strong>Impact:</strong> Delivered on time, exceeding user engagement targets by 35% in the first month.</p>
+							<p><strong>Tech Stack:</strong> React Native, Node.js, Firebase</p>
 						</div>
 					</div>
 					<div class="col-md-6 wow fadeIn" data-wow-delay="0.6s">
-						<div class="portfolio-item" style="padding: 30px; border: 1px solid #e0e0e0; border-radius: 5px; background: #f9f9f9;">
-							<h4 style="color: #333; margin-bottom: 10px;">Coming Soon</h4>
-							<p style="color: #666; margin-bottom: 15px;"><strong>Project Type:</strong> Case Study</p>
-							<p style="color: #666; margin-bottom: 15px;">We're working on exciting new projects with leading SMBs. Check back soon to see how we're transforming businesses with custom technology solutions.</p>
-							<p style="color: #999;"><em>More case studies to follow...</em></p>
+						<div class="portfolio-item" style="padding: 30px;">
+							<h4 style="margin-bottom: 10px;">Coming Soon</h4>
+							<p style="margin-bottom: 15px;"><strong>Project Type:</strong> Case Study</p>
+							<p style="margin-bottom: 15px;">We're working on exciting new projects with leading SMBs. Check back soon to see how we're transforming businesses with custom technology solutions.</p>
+							<p style="color: #888;"><em>More case studies to follow...</em></p>
 						</div>
 					</div>
 				</div>
@@ -195,12 +412,12 @@
 		<!-- end portfolio -->
 
 		<!-- start cta -->
-		<section id="cta" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 80px 0; text-align: center;">
+		<section id="cta" style="padding: 80px 0; text-align: center;">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 wow fadeIn">
-						<h2 class="text-uppercase" style="color: white; margin-bottom: 20px;">Ready to Transform Your Business?</h2>
-						<p style="color: white; font-size: 16px; margin-bottom: 30px;">Let's discuss how Crown Logic can build the perfect solution for your needs.</p>
+						<h2 class="text-uppercase" style="margin-bottom: 20px;">Ready to Transform Your Business?</h2>
+						<p style="font-size: 16px; margin-bottom: 30px; color: #ddd;">Let's discuss how Crown Logic can build the perfect solution for your needs.</p>
 						<button class="btn btn-warning text-uppercase" style="font-size: 16px; padding: 12px 40px;"><i class="fa fa-calendar"></i> Schedule a Demo</button>
 					</div>
 				</div>
@@ -240,7 +457,7 @@
 										<input type="submit" class="form-control text-uppercase" value="Send">
 									</div>
 								</form>
-								<p style="font-size: 12px; color: #999; margin-top: 15px;"><em>Note: Configure Formspree integration or your preferred email service.</em></p>
+								<p style="font-size: 12px; color: #666; margin-top: 15px;"><em>We'll respond within 24 hours.</em></p>
 							</div>
 						</div>
 					</div>
