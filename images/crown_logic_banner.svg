@@ -1,0 +1,55 @@
+<svg width="1200" height="220" viewBox="0 0 1200 220" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>Crown Logic horizontal banner logo</title>
+  <desc>Crown Logic horizontal banner — midnight dark with electric blue bracket crown and class declaration wordmark</desc>
+
+  <rect x="0" y="0" width="1200" height="220" rx="16" style="fill:#080F1A;"/>
+
+  <!-- subtle grid texture -->
+  <line style="stroke:#0D1926;stroke-width:0.5;" x1="0" y1="55" x2="1200" y2="55"/>
+  <line style="stroke:#0D1926;stroke-width:0.5;" x1="0" y1="110" x2="1200" y2="110"/>
+  <line style="stroke:#0D1926;stroke-width:0.5;" x1="0" y1="165" x2="1200" y2="165"/>
+  <line style="stroke:#0D1926;stroke-width:0.5;" x1="200" y1="0" x2="200" y2="220"/>
+  <line style="stroke:#0D1926;stroke-width:0.5;" x1="400" y1="0" x2="400" y2="220"/>
+  <line style="stroke:#0D1926;stroke-width:0.5;" x1="600" y1="0" x2="600" y2="220"/>
+  <line style="stroke:#0D1926;stroke-width:0.5;" x1="800" y1="0" x2="800" y2="220"/>
+  <line style="stroke:#0D1926;stroke-width:0.5;" x1="1000" y1="0" x2="1000" y2="220"/>
+
+  <!-- crown: brackets span full height of text block (top 20, bottom 200) -->
+  <g transform="translate(24, 18)">
+    <!-- brackets -->
+    <polyline style="fill:none;stroke:#0F2744;stroke-width:2.5;stroke-linecap:square;" points="18,0 0,0 0,184 18,184"/>
+    <polyline style="fill:none;stroke:#0F2744;stroke-width:2.5;stroke-linecap:square;" points="212,0 230,0 230,184 212,184"/>
+
+    <!-- crown — fills the bracket height -->
+    <polyline style="fill:none;stroke:#3B9EFF;stroke-width:3;stroke-linejoin:round;stroke-linecap:round;"
+      points="28,162 28,72 68,114 115,14 162,114 202,72 202,162"/>
+    <line style="stroke:#3B9EFF;stroke-width:3;" x1="28" y1="162" x2="202" y2="162"/>
+    <line style="stroke:#1A4A8A;stroke-width:1;" x1="28" y1="167" x2="202" y2="167"/>
+
+    <!-- joint nodes -->
+    <circle style="fill:#080F1A;stroke:#3B9EFF;stroke-width:2.5;" cx="28"  cy="72"  r="7"/>
+    <circle style="fill:#080F1A;stroke:#3B9EFF;stroke-width:2.5;" cx="202" cy="72"  r="7"/>
+    <circle style="fill:#3B9EFF;"                                  cx="115" cy="14"  r="10"/>
+    <circle style="fill:#080F1A;stroke:#3B9EFF;stroke-width:2;"   cx="68"  cy="114" r="6"/>
+    <circle style="fill:#080F1A;stroke:#3B9EFF;stroke-width:2;"   cx="162" cy="114" r="6"/>
+
+    <!-- peak trace -->
+    <line style="stroke:#1A4A8A;stroke-width:1;" x1="115" y1="4" x2="115" y2="0"/>
+  </g>
+
+  <!-- wordmark: x = 24 + 230 + 22 = 276 -->
+  <text x="276" y="108" text-anchor="start"
+    style="font-family:'Inter',sans-serif;font-weight:500;font-size:68px;fill:#E8F4FF;letter-spacing:0.03em;">Crown Logic</text>
+
+  <!-- horizontal rule -->
+  <line style="stroke:#0F2744;stroke-width:0.75;" x1="276" y1="122" x2="1160" y2="122"/>
+
+  <!-- class declaration -->
+  <text x="276" y="148" text-anchor="start"
+    style="font-family:'JetBrains Mono','Fira Code',monospace;font-size:17px;fill:#163E6E;">extends <tspan style="fill:#3B9EFF;">SoftwareDev</tspan>  implements <tspan style="fill:#5BB8FF;">Excellence</tspan></text>
+
+  <!-- comment footer -->
+  <text x="276" y="182" text-anchor="start"
+    style="font-family:'JetBrains Mono','Fira Code',monospace;font-size:11px;fill:#0F2744;">// est. 2026</text>
+
+</svg>
