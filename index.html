@@ -481,6 +481,632 @@
 					padding-top: 120px !important;
 				}
 			}
+
+			/* Section Styling */
+			.section-title {
+				font-size: 42px;
+				font-weight: 800;
+				color: var(--light-text);
+				margin-bottom: 15px;
+				letter-spacing: -1px;
+			}
+
+			.section-subtitle {
+				font-size: 16px;
+				color: #aaa;
+				margin-bottom: 20px;
+			}
+
+			.section-subtitle-left {
+				font-size: 15px;
+				color: #aaa;
+				margin-bottom: 35px;
+			}
+
+			.section-divider {
+				width: 60px;
+				height: 4px;
+				background: linear-gradient(90deg, var(--electric-blue), var(--accent-blue));
+				margin: 0 auto;
+				border-radius: 2px;
+			}
+
+			/* Service Cards */
+			.service-card {
+				background: rgba(15, 39, 68, 0.4);
+				border: 2px solid var(--dark-blue);
+				border-radius: 12px;
+				padding: 40px 30px;
+				height: 100%;
+				transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+				position: relative;
+				overflow: hidden;
+			}
+
+			.service-card::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background: linear-gradient(135deg, rgba(59, 158, 255, 0.1) 0%, transparent 100%);
+				opacity: 0;
+				transition: opacity 0.4s ease;
+			}
+
+			.service-card:hover {
+				border-color: var(--electric-blue);
+				background: rgba(15, 39, 68, 0.8);
+				transform: translateY(-10px);
+				box-shadow: 0 20px 40px rgba(59, 158, 255, 0.2);
+			}
+
+			.service-card:hover::before {
+				opacity: 1;
+			}
+
+			.service-card.featured {
+				border-color: var(--electric-blue);
+				background: rgba(59, 158, 255, 0.05);
+				position: relative;
+				z-index: 10;
+			}
+
+			.service-icon {
+				width: 70px;
+				height: 70px;
+				background: rgba(59, 158, 255, 0.15);
+				border: 2px solid var(--electric-blue);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 20px;
+				font-size: 32px;
+				color: var(--electric-blue);
+				transition: all 0.3s ease;
+			}
+
+			.service-card:hover .service-icon {
+				background: var(--electric-blue);
+				color: var(--midnight);
+				transform: scale(1.1) rotate(5deg);
+			}
+
+			.service-card h3 {
+				font-size: 20px;
+				font-weight: 700;
+				margin-bottom: 15px;
+				color: var(--light-text);
+				letter-spacing: 0.5px;
+			}
+
+			.service-card p {
+				color: #aaa;
+				font-size: 14px;
+				line-height: 1.7;
+				margin-bottom: 20px;
+			}
+
+			.service-footer {
+				display: flex;
+				gap: 10px;
+			}
+
+			.service-tag {
+				display: inline-block;
+				background: rgba(59, 158, 255, 0.2);
+				color: var(--electric-blue);
+				padding: 5px 12px;
+				border-radius: 20px;
+				font-size: 11px;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+
+			/* Why Us Section */
+			.why-us-image {
+				position: relative;
+				border-radius: 12px;
+				overflow: hidden;
+			}
+
+			.why-us-image img {
+				border-radius: 12px;
+				border: 2px solid var(--dark-blue);
+				transition: transform 0.4s ease;
+			}
+
+			.why-us-image:hover img {
+				transform: scale(1.05);
+			}
+
+			.image-badge {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+				background: var(--electric-blue);
+				color: var(--midnight);
+				padding: 12px 20px;
+				border-radius: 8px;
+				font-weight: 700;
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				font-size: 13px;
+			}
+
+			.benefit-list {
+				display: flex;
+				flex-direction: column;
+				gap: 25px;
+			}
+
+			.benefit-item {
+				display: flex;
+				gap: 20px;
+				align-items: flex-start;
+			}
+
+			.benefit-icon {
+				flex-shrink: 0;
+				width: 40px;
+				height: 40px;
+				background: rgba(59, 158, 255, 0.2);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: var(--electric-blue);
+				font-size: 20px;
+			}
+
+			.benefit-content h4 {
+				color: var(--light-text);
+				font-weight: 700;
+				margin-bottom: 8px;
+				font-size: 16px;
+			}
+
+			.benefit-content p {
+				color: #aaa;
+				font-size: 14px;
+				line-height: 1.6;
+			}
+
+			/* Process Steps */
+			.process-steps {
+				display: flex;
+				flex-direction: column;
+				gap: 35px;
+			}
+
+			.process-step {
+				display: flex;
+				gap: 25px;
+				position: relative;
+				padding-bottom: 30px;
+			}
+
+			.process-step:not(:last-child)::after {
+				content: '';
+				position: absolute;
+				left: 50px;
+				top: 100%;
+				width: 2px;
+				height: 25px;
+				background: linear-gradient(180deg, var(--electric-blue), transparent);
+			}
+
+			.step-number {
+				font-size: 32px;
+				font-weight: 800;
+				color: rgba(59, 158, 255, 0.2);
+				min-width: 50px;
+			}
+
+			.step-icon {
+				width: 50px;
+				height: 50px;
+				background: rgba(59, 158, 255, 0.2);
+				border: 2px solid var(--electric-blue);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: var(--electric-blue);
+				font-size: 24px;
+				flex-shrink: 0;
+			}
+
+			.step-content h4 {
+				color: var(--light-text);
+				font-weight: 700;
+				margin-bottom: 10px;
+				font-size: 16px;
+			}
+
+			.step-content p {
+				color: #aaa;
+				font-size: 14px;
+				line-height: 1.6;
+			}
+
+			/* Portfolio Cards */
+			.portfolio-card {
+				background: rgba(15, 39, 68, 0.5);
+				border: 2px solid var(--dark-blue);
+				border-radius: 12px;
+				padding: 40px;
+				height: 100%;
+				transition: all 0.4s ease;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.portfolio-card::before {
+				content: '';
+				position: absolute;
+				top: -50%;
+				right: -50%;
+				width: 200px;
+				height: 200px;
+				background: radial-gradient(circle, rgba(59, 158, 255, 0.1) 0%, transparent 70%);
+				transition: all 0.6s ease;
+			}
+
+			.portfolio-card:hover {
+				border-color: var(--electric-blue);
+				background: rgba(15, 39, 68, 0.8);
+				transform: translateY(-15px);
+				box-shadow: 0 25px 50px rgba(59, 158, 255, 0.25);
+			}
+
+			.portfolio-card:hover::before {
+				top: -25%;
+				right: -25%;
+			}
+
+			.portfolio-card.coming-soon {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				text-align: center;
+				background: rgba(59, 158, 255, 0.03);
+			}
+
+			.portfolio-header {
+				position: relative;
+				z-index: 2;
+				margin-bottom: 20px;
+			}
+
+			.portfolio-badge {
+				display: inline-block;
+				background: var(--electric-blue);
+				color: var(--midnight);
+				padding: 6px 12px;
+				border-radius: 6px;
+				font-size: 11px;
+				font-weight: 700;
+				text-transform: uppercase;
+				margin-bottom: 12px;
+			}
+
+			.portfolio-badge.upcoming {
+				background: rgba(59, 158, 255, 0.3);
+				color: var(--accent-blue);
+			}
+
+			.portfolio-header h3 {
+				color: var(--light-text);
+				font-size: 24px;
+				font-weight: 800;
+				margin: 0;
+			}
+
+			.portfolio-meta {
+				display: flex;
+				gap: 15px;
+				margin-bottom: 20px;
+				flex-wrap: wrap;
+				position: relative;
+				z-index: 2;
+			}
+
+			.project-type, .project-status {
+				display: inline-block;
+				font-size: 13px;
+				color: #aaa;
+			}
+
+			.project-type i, .project-status i {
+				margin-right: 6px;
+				color: var(--electric-blue);
+			}
+
+			.portfolio-description {
+				color: #aaa;
+				font-size: 14px;
+				line-height: 1.7;
+				margin-bottom: 25px;
+				position: relative;
+				z-index: 2;
+			}
+
+			.portfolio-metrics {
+				display: flex;
+				gap: 20px;
+				margin-bottom: 25px;
+				position: relative;
+				z-index: 2;
+			}
+
+			.metric {
+				flex: 1;
+				background: rgba(59, 158, 255, 0.1);
+				padding: 15px;
+				border-radius: 8px;
+				border-left: 3px solid var(--electric-blue);
+			}
+
+			.metric-label {
+				display: block;
+				font-size: 12px;
+				color: #888;
+				margin-bottom: 5px;
+				text-transform: uppercase;
+			}
+
+			.metric-value {
+				display: block;
+				font-size: 18px;
+				font-weight: 700;
+				color: var(--electric-blue);
+			}
+
+			.portfolio-tech {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 8px;
+				position: relative;
+				z-index: 2;
+			}
+
+			.tech-tag {
+				display: inline-block;
+				background: rgba(59, 158, 255, 0.15);
+				color: var(--accent-blue);
+				padding: 6px 12px;
+				border-radius: 5px;
+				font-size: 12px;
+				font-weight: 600;
+				border: 1px solid rgba(59, 158, 255, 0.3);
+			}
+
+			.portfolio-cta {
+				position: relative;
+				z-index: 2;
+			}
+
+			/* CTA Section */
+			.cta-background {
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background:
+					radial-gradient(circle at 20% 50%, rgba(59, 158, 255, 0.1) 0%, transparent 50%),
+					radial-gradient(circle at 80% 50%, rgba(59, 158, 255, 0.08) 0%, transparent 50%);
+				z-index: 1;
+			}
+
+			.cta-content {
+				text-align: center;
+			}
+
+			.cta-badge {
+				display: inline-block;
+				background: rgba(59, 158, 255, 0.2);
+				border: 1px solid var(--electric-blue);
+				color: var(--electric-blue);
+				padding: 8px 16px;
+				border-radius: 20px;
+				font-size: 12px;
+				font-weight: 700;
+				text-transform: uppercase;
+				margin-bottom: 20px;
+			}
+
+			.cta-button {
+				margin-right: 15px;
+				box-shadow: 0 10px 30px rgba(59, 158, 255, 0.3);
+				transition: all 0.3s ease;
+			}
+
+			.cta-button:hover {
+				box-shadow: 0 15px 40px rgba(59, 158, 255, 0.5);
+				transform: translateY(-3px);
+			}
+
+			.btn-outline-primary {
+				background: transparent;
+				border: 2px solid var(--electric-blue);
+				color: var(--electric-blue);
+				font-weight: 700;
+				transition: all 0.3s ease;
+			}
+
+			.btn-outline-primary:hover {
+				background: var(--electric-blue);
+				color: var(--midnight);
+			}
+
+			/* Contact Section */
+			.contact-info-block {
+				background: rgba(15, 39, 68, 0.4);
+				border: 2px solid var(--dark-blue);
+				border-radius: 12px;
+				padding: 40px;
+				height: 100%;
+			}
+
+			.contact-form-block {
+				background: rgba(15, 39, 68, 0.4);
+				border: 2px solid var(--dark-blue);
+				border-radius: 12px;
+				padding: 40px;
+				height: 100%;
+			}
+
+			.contact-info-item {
+				display: flex;
+				gap: 15px;
+				margin-bottom: 30px;
+				align-items: flex-start;
+			}
+
+			.info-icon {
+				width: 45px;
+				height: 45px;
+				background: rgba(59, 158, 255, 0.2);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: var(--electric-blue);
+				font-size: 20px;
+				flex-shrink: 0;
+			}
+
+			.info-content h5 {
+				color: var(--light-text);
+				font-weight: 700;
+				margin-bottom: 5px;
+				font-size: 14px;
+			}
+
+			.info-content p, .info-content a {
+				color: #aaa;
+				font-size: 13px;
+				line-height: 1.6;
+				text-decoration: none;
+				transition: color 0.3s ease;
+			}
+
+			.info-content a:hover {
+				color: var(--electric-blue);
+			}
+
+			.social-links {
+				display: flex;
+				gap: 15px;
+				align-items: center;
+			}
+
+			.social-link {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+				width: 40px;
+				height: 40px;
+				background: rgba(59, 158, 255, 0.15);
+				border: 1px solid var(--electric-blue);
+				border-radius: 50%;
+				color: var(--electric-blue);
+				font-size: 16px;
+				transition: all 0.3s ease;
+				text-decoration: none;
+			}
+
+			.social-link:hover {
+				background: var(--electric-blue);
+				color: var(--midnight);
+				transform: translateY(-5px);
+			}
+
+			.form-row {
+				display: flex;
+				gap: 15px;
+				margin-bottom: 15px;
+				flex-wrap: wrap;
+			}
+
+			.form-row .col-md-6 {
+				flex: 1;
+				min-width: 150px;
+			}
+
+			.form-row .col-md-12 {
+				width: 100%;
+			}
+
+			.contact-submit {
+				width: 100%;
+				padding: 14px 30px !important;
+				font-weight: 700;
+				font-size: 14px;
+				margin-top: 10px;
+				box-shadow: 0 10px 30px rgba(59, 158, 255, 0.2);
+			}
+
+			.contact-submit:hover {
+				box-shadow: 0 15px 40px rgba(59, 158, 255, 0.4);
+				transform: translateY(-2px);
+			}
+
+			/* Additional Responsive */
+			@media (max-width: 768px) {
+				.section-title {
+					font-size: 32px;
+				}
+
+				.section-subtitle {
+					font-size: 14px;
+				}
+
+				.service-card {
+					margin-bottom: 20px;
+				}
+
+				.process-step {
+					gap: 15px;
+				}
+
+				.step-number {
+					font-size: 24px;
+					min-width: 40px;
+				}
+
+				.portfolio-metrics {
+					flex-direction: column;
+				}
+
+				.contact-info-block,
+				.contact-form-block {
+					margin-bottom: 30px;
+				}
+
+				.cta-button {
+					margin-right: 0;
+					margin-bottom: 10px;
+					width: 100%;
+				}
+
+				.btn-outline-primary {
+					width: 100%;
+				}
+
+				.form-row {
+					flex-direction: column;
+				}
+
+				.form-row .col-md-6 {
+					width: 100%;
+				}
+			}
 		</style>
 
 	</head>
@@ -564,91 +1190,241 @@
 			</div>
 		</section>
 		<!-- end home -->
-		<!-- start divider -->
+		<!-- start services -->
 		<section id="divider">
 			<div class="container">
+				<div class="row" style="margin-bottom: 60px;">
+					<div class="col-md-12 text-center wow fadeIn">
+						<h2 class="section-title">Our Core Services</h2>
+						<p class="section-subtitle">Expert solutions crafted for every platform and challenge</p>
+						<div class="section-divider"></div>
+					</div>
+				</div>
 				<div class="row">
-					<div class="col-md-4 wow fadeInUp templatemo-box" data-wow-delay="0.3s">
-						<i class="fa fa-code"></i>
-						<h3 class="text-uppercase">Custom Software</h3>
-						<p>Build enterprise-grade applications tailored to your unique business needs. From concept to deployment, we handle complex projects with precision and expertise.</p>
+					<div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+						<div class="service-card">
+							<div class="service-icon">
+								<i class="fa fa-code"></i>
+							</div>
+							<h3>Custom Software</h3>
+							<p>Build enterprise-grade applications tailored to your unique business needs. From concept to deployment, we handle complex projects with precision and expertise.</p>
+							<div class="service-footer">
+								<span class="service-tag">Advanced</span>
+							</div>
+						</div>
 					</div>
-					<div class="col-md-4 wow fadeInUp templatemo-box" data-wow-delay="0.3s">
-						<i class="fa fa-mobile"></i>
-						<h3 class="text-uppercase">Mobile Apps</h3>
-						<p>Native and cross-platform mobile applications that engage users and drive results. We develop for iOS, Android, and everything in between.</p>
+					<div class="col-md-4 wow fadeInUp" data-wow-delay="0.4s">
+						<div class="service-card featured">
+							<div class="service-icon">
+								<i class="fa fa-mobile"></i>
+							</div>
+							<h3>Mobile Apps</h3>
+							<p>Native and cross-platform mobile applications that engage users and drive results. We develop for iOS, Android, and everything in between.</p>
+							<div class="service-footer">
+								<span class="service-tag">Popular</span>
+							</div>
+						</div>
 					</div>
-					<div class="col-md-4 wow fadeInUp templatemo-box" data-wow-delay="0.3s">
-						<i class="fa fa-globe"></i>
-						<h3 class="text-uppercase">Web Applications</h3>
-						<p>Modern, responsive web platforms built with the latest technologies. Scalable solutions that perform flawlessly across all devices and browsers.</p>
+					<div class="col-md-4 wow fadeInUp" data-wow-delay="0.6s">
+						<div class="service-card">
+							<div class="service-icon">
+								<i class="fa fa-globe"></i>
+							</div>
+							<h3>Web Applications</h3>
+							<p>Modern, responsive web platforms built with the latest technologies. Scalable solutions that perform flawlessly across all devices and browsers.</p>
+							<div class="service-footer">
+								<span class="service-tag">Scalable</span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<!-- end divider -->
+		<!-- end services -->
 
-		<!-- start feature -->
+		<!-- start why-us -->
 		<section id="services">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-6 wow fadeInLeft" data-wow-delay="0.6s">
-						<h2 class="text-uppercase">Why Choose Crown Logic?</h2>
-						<p>We understand that every business is unique. That's why we create solutions that fit your specific needs, not cookie-cutter templates.</p>
-						<p><span><i class="fa fa-check"></i></span>Expert Development: Experienced teams fluent in the latest technologies and frameworks.</p>
-						<p><span><i class="fa fa-check"></i></span>Agile Approach: Collaborative development with transparent communication and regular updates.</p>
-						<p><span><i class="fa fa-check"></i></span>Long-term Support: We don't just build and leave—we're here to maintain and evolve your solution.</p>
+				<div class="row align-items-center">
+					<div class="col-md-5 wow fadeInLeft" data-wow-delay="0.3s">
+						<div class="why-us-image">
+							<img src="images/software-img.png" class="img-responsive" alt="Crown Logic Development">
+							<div class="image-badge">
+								<i class="fa fa-star"></i>
+								<span>Industry Leading</span>
+							</div>
+						</div>
 					</div>
-					<div class="col-md-6 wow fadeInRight" data-wow-delay="0.6s">
-						<img src="images/software-img.png" class="img-responsive" alt="Crown Logic Development">
+					<div class="col-md-7 wow fadeInRight" data-wow-delay="0.3s">
+						<h2 class="section-title" style="text-align: left;">Why Choose Crown Logic?</h2>
+						<p class="section-subtitle-left">We understand that every business is unique. That's why we create solutions that fit your specific needs, not cookie-cutter templates.</p>
+
+						<div class="benefit-list">
+							<div class="benefit-item">
+								<div class="benefit-icon">
+									<i class="fa fa-check-circle"></i>
+								</div>
+								<div class="benefit-content">
+									<h4>Expert Development</h4>
+									<p>Experienced teams fluent in the latest technologies and frameworks. We stay ahead of industry trends so your solution is future-proof.</p>
+								</div>
+							</div>
+
+							<div class="benefit-item">
+								<div class="benefit-icon">
+									<i class="fa fa-check-circle"></i>
+								</div>
+								<div class="benefit-content">
+									<h4>Agile Approach</h4>
+									<p>Collaborative development with transparent communication and regular updates. You're in control, always knowing what's happening.</p>
+								</div>
+							</div>
+
+							<div class="benefit-item">
+								<div class="benefit-icon">
+									<i class="fa fa-check-circle"></i>
+								</div>
+								<div class="benefit-content">
+									<h4>Long-term Partnership</h4>
+									<p>We don't just build and leave. We're here to maintain, support, and evolve your solution as your business grows.</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<!-- end feature -->
+		<!-- end why-us -->
 
-		<!-- start feature1 -->
+		<!-- start process -->
 		<section id="feature1">
 			<div class="container">
+				<div class="row" style="margin-bottom: 60px;">
+					<div class="col-md-12 text-center wow fadeIn">
+						<h2 class="section-title">Our Development Process</h2>
+						<p class="section-subtitle">Proven methodologies for on-time, on-budget, exceptional quality delivery</p>
+						<div class="section-divider"></div>
+					</div>
+				</div>
+
 				<div class="row">
-					<div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+					<div class="col-md-6 wow fadeInLeft" data-wow-delay="0.3s">
 						<img src="images/software-img.png" class="img-responsive" alt="Development Process">
 					</div>
-					<div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-						<h2 class="text-uppercase">Our Development Process</h2>
-						<p>We follow proven methodologies to ensure your project is delivered on time, on budget, and with exceptional quality.</p>
-						<p><span><i class="fa fa-lightbulb-o"></i></span>Strategy & Planning: Deep dive into your requirements, market analysis, and goal alignment.</p>
-						<p><span><i class="fa fa-cogs"></i></span>Design & Development: Collaborative creation with prototypes, feedback loops, and incremental delivery.</p>
-						<p><span><i class="fa fa-rocket"></i></span>Launch & Optimization: Deployment, testing, and continuous improvement for ongoing success.</p>
+
+					<div class="col-md-6 wow fadeInRight" data-wow-delay="0.3s">
+						<div class="process-steps">
+							<div class="process-step">
+								<div class="step-number">01</div>
+								<div class="step-icon">
+									<i class="fa fa-lightbulb-o"></i>
+								</div>
+								<div class="step-content">
+									<h4>Strategy & Planning</h4>
+									<p>Deep dive into your requirements, market analysis, and goal alignment. We create a comprehensive roadmap that guides every decision.</p>
+								</div>
+							</div>
+
+							<div class="process-step">
+								<div class="step-number">02</div>
+								<div class="step-icon">
+									<i class="fa fa-cogs"></i>
+								</div>
+								<div class="step-content">
+									<h4>Design & Development</h4>
+									<p>Collaborative creation with prototypes, feedback loops, and incremental delivery. You're involved every step of the way.</p>
+								</div>
+							</div>
+
+							<div class="process-step">
+								<div class="step-number">03</div>
+								<div class="step-icon">
+									<i class="fa fa-rocket"></i>
+								</div>
+								<div class="step-content">
+									<h4>Launch & Optimize</h4>
+									<p>Deployment, rigorous testing, and continuous improvement. We ensure your solution performs flawlessly from day one.</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<!-- end feature1 -->
+		<!-- end process -->
 
 		<!-- start portfolio -->
 		<section id="portfolio">
 			<div class="container">
-				<div class="row">
-					<div class="col-md-12 wow bounceIn">
-						<h2 class="text-uppercase">Our Portfolio</h2>
-						<p style="color: #aaa;">Real projects. Real results. Here's what we've built.</p>
+				<div class="row" style="margin-bottom: 60px;">
+					<div class="col-md-12 text-center wow fadeIn">
+						<h2 class="section-title">Our Portfolio</h2>
+						<p class="section-subtitle">Real projects. Real results. Here's what we've built.</p>
+						<div class="section-divider"></div>
 					</div>
-					<div class="col-md-6 wow fadeIn" data-wow-delay="0.4s">
-						<div class="portfolio-item" style="padding: 30px;">
-							<h4 style="margin-bottom: 10px;">FitLevel</h4>
-							<p style="margin-bottom: 15px;"><strong>Project Type:</strong> Mobile Application</p>
-							<p style="margin-bottom: 15px;">A comprehensive fitness tracking application that helps users achieve their health goals through personalized workout plans, progress tracking, and community engagement.</p>
-							<p style="margin-bottom: 10px;"><strong>Impact:</strong> Delivered on time, exceeding user engagement targets by 35% in the first month.</p>
-							<p><strong>Tech Stack:</strong> React Native, Node.js, Firebase</p>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+						<div class="portfolio-card">
+							<div class="portfolio-header">
+								<div class="portfolio-badge">Featured</div>
+								<h3>FitLevel</h3>
+							</div>
+
+							<div class="portfolio-meta">
+								<span class="project-type">
+									<i class="fa fa-mobile"></i> Mobile Application
+								</span>
+								<span class="project-status">
+									<i class="fa fa-check"></i> Live
+								</span>
+							</div>
+
+							<p class="portfolio-description">A comprehensive fitness tracking application that helps users achieve their health goals through personalized workout plans, progress tracking, and community engagement.</p>
+
+							<div class="portfolio-metrics">
+								<div class="metric">
+									<span class="metric-label">User Engagement</span>
+									<span class="metric-value">+35%</span>
+								</div>
+								<div class="metric">
+									<span class="metric-label">Delivery</span>
+									<span class="metric-value">On-Time</span>
+								</div>
+							</div>
+
+							<div class="portfolio-tech">
+								<span class="tech-tag">React Native</span>
+								<span class="tech-tag">Node.js</span>
+								<span class="tech-tag">Firebase</span>
+							</div>
 						</div>
 					</div>
-					<div class="col-md-6 wow fadeIn" data-wow-delay="0.6s">
-						<div class="portfolio-item" style="padding: 30px;">
-							<h4 style="margin-bottom: 10px;">Coming Soon</h4>
-							<p style="margin-bottom: 15px;"><strong>Project Type:</strong> Case Study</p>
-							<p style="margin-bottom: 15px;">We're working on exciting new projects with leading SMBs. Check back soon to see how we're transforming businesses with custom technology solutions.</p>
-							<p style="color: #888;"><em>More case studies to follow...</em></p>
+
+					<div class="col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+						<div class="portfolio-card coming-soon">
+							<div class="portfolio-header">
+								<div class="portfolio-badge upcoming">Upcoming</div>
+								<h3>Next Success Story</h3>
+							</div>
+
+							<div class="portfolio-meta">
+								<span class="project-type">
+									<i class="fa fa-star"></i> Case Study
+								</span>
+							</div>
+
+							<p class="portfolio-description">We're collaborating with leading SMBs to build innovative solutions that transform their businesses. New case studies coming soon to showcase our latest achievements.</p>
+
+							<div class="portfolio-cta">
+								<p style="color: #888; font-size: 14px; margin-bottom: 15px;">
+									<em>Check back soon for more success stories</em>
+								</p>
+								<button class="btn btn-primary" style="font-size: 12px; padding: 8px 20px;">
+									<i class="fa fa-bell"></i> Notify Me
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -657,13 +1433,22 @@
 		<!-- end portfolio -->
 
 		<!-- start cta -->
-		<section id="cta" style="padding: 80px 0; text-align: center;">
-			<div class="container">
+		<section id="cta" style="padding: 100px 0; text-align: center; position: relative; overflow: hidden;">
+			<div class="cta-background"></div>
+			<div class="container" style="position: relative; z-index: 2;">
 				<div class="row">
-					<div class="col-md-12 wow fadeIn">
-						<h2 class="text-uppercase" style="margin-bottom: 20px;">Ready to Transform Your Business?</h2>
-						<p style="font-size: 16px; margin-bottom: 30px; color: #ddd;">Let's discuss how Crown Logic can build the perfect solution for your needs.</p>
-						<button class="btn btn-warning text-uppercase" style="font-size: 16px; padding: 12px 40px;"><i class="fa fa-calendar"></i> Schedule a Demo</button>
+					<div class="col-md-8 col-md-offset-2 wow fadeInUp">
+						<div class="cta-content">
+							<div class="cta-badge">Next Step</div>
+							<h2 style="margin-bottom: 20px; font-size: 42px; font-weight: 800; letter-spacing: -1px;">Ready to Transform Your Business?</h2>
+							<p style="font-size: 18px; margin-bottom: 40px; color: #ddd; line-height: 1.6;">Let's discuss how Crown Logic can build the perfect solution for your needs. Our team is ready to turn your vision into reality.</p>
+							<button class="btn btn-warning cta-button" style="font-size: 16px; padding: 16px 45px; margin-right: 15px;">
+								<i class="fa fa-calendar"></i> Schedule Your Consultation
+							</button>
+							<button class="btn btn-outline-primary" style="font-size: 16px; padding: 16px 45px;">
+								<i class="fa fa-envelope"></i> Send Us An Email
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -674,35 +1459,87 @@
 		<section id="contact">
 			<div class="overlay">
 				<div class="container">
-					<div class="row">
-						<div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-							<h2 class="text-uppercase">Get In Touch</h2>
-							<p>Have a project in mind? Let's talk about how Crown Logic can help bring your vision to life. Reach out today and schedule a consultation with our team.</p>
-							<address>
-								<p><i class="fa fa-envelope-o"></i> <a href="mailto:fitleveladmin@gmail.com" style="color: white;">fitleveladmin@gmail.com</a></p>
-								<p style="margin-top: 20px; font-size: 12px; color: #ccc;">Based in the United States. Serving clients globally.</p>
-							</address>
+					<div class="row" style="margin-bottom: 60px;">
+						<div class="col-md-12 text-center wow fadeIn">
+							<h2 class="section-title">Let's Connect</h2>
+							<p class="section-subtitle">Have a project in mind? Let's discuss how Crown Logic can help bring your vision to life.</p>
+							<div class="section-divider"></div>
 						</div>
-						<div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-							<div class="contact-form">
+					</div>
+
+					<div class="row">
+						<div class="col-md-5 wow fadeInLeft" data-wow-delay="0.3s">
+							<div class="contact-info-block">
+								<h4 style="color: var(--light-text); margin-bottom: 30px;">Get In Touch</h4>
+
+								<div class="contact-info-item">
+									<div class="info-icon">
+										<i class="fa fa-envelope"></i>
+									</div>
+									<div class="info-content">
+										<h5>Email</h5>
+										<a href="mailto:fitleveladmin@gmail.com">fitleveladmin@gmail.com</a>
+									</div>
+								</div>
+
+								<div class="contact-info-item">
+									<div class="info-icon">
+										<i class="fa fa-globe"></i>
+									</div>
+									<div class="info-content">
+										<h5>Location</h5>
+										<p>United States<br>Serving clients globally</p>
+									</div>
+								</div>
+
+								<div class="contact-info-item">
+									<div class="info-icon">
+										<i class="fa fa-clock-o"></i>
+									</div>
+									<div class="info-content">
+										<h5>Response Time</h5>
+										<p>We respond within 24 hours</p>
+									</div>
+								</div>
+
+								<div class="social-links" style="margin-top: 40px;">
+									<p style="color: #888; font-size: 12px; margin-bottom: 15px;">Follow Us</p>
+									<a href="#" class="social-link"><i class="fa fa-linkedin"></i></a>
+									<a href="#" class="social-link"><i class="fa fa-twitter"></i></a>
+									<a href="#" class="social-link"><i class="fa fa-github"></i></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-7 wow fadeInRight" data-wow-delay="0.3s">
+							<div class="contact-form-block">
+								<h4 style="color: var(--light-text); margin-bottom: 25px;">Send Us A Message</h4>
 								<form action="https://formspree.io/f/maqzglqj" method="POST">
-									<div class="col-md-6">
-										<input type="text" class="form-control" name="name" placeholder="Name" required>
+									<div class="form-row">
+										<div class="col-md-6">
+											<input type="text" class="form-control" name="name" placeholder="Your Name" required>
+										</div>
+										<div class="col-md-6">
+											<input type="email" class="form-control" name="email" placeholder="Your Email" required>
+										</div>
 									</div>
-									<div class="col-md-6">
-										<input type="email" class="form-control" name="email" placeholder="Email" required>
+									<div class="form-row">
+										<div class="col-md-12">
+											<input type="text" class="form-control" name="company" placeholder="Company (Optional)">
+										</div>
 									</div>
-									<div class="col-md-12">
-										<input type="text" class="form-control" name="company" placeholder="Company">
+									<div class="form-row">
+										<div class="col-md-12">
+											<textarea class="form-control" name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
+										</div>
 									</div>
-									<div class="col-md-12">
-										<textarea class="form-control" name="message" placeholder="Tell us about your project..." rows="4" required></textarea>
-									</div>
-									<div class="col-md-8">
-										<input type="submit" class="form-control text-uppercase" value="Send">
-									</div>
+									<button type="submit" class="btn btn-primary contact-submit">
+										<i class="fa fa-send"></i> Send Message
+									</button>
 								</form>
-								<p style="font-size: 12px; color: #666; margin-top: 15px;"><em>We'll respond within 24 hours.</em></p>
+								<p style="font-size: 13px; color: #666; margin-top: 15px;">
+									<i class="fa fa-shield"></i> Your information is secure and will never be shared.
+								</p>
 							</div>
 						</div>
 					</div>
