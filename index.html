@@ -260,11 +260,225 @@
 				color: var(--accent-blue);
 			}
 
+			/* Home Section Redesign */
+			#home {
+				background: linear-gradient(135deg, var(--midnight) 0%, var(--dark-blue) 50%, var(--midnight) 100%);
+				position: relative;
+				overflow: hidden;
+				padding-top: 140px !important;
+				padding-bottom: 100px !important;
+			}
+
+			#home::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background:
+					radial-gradient(circle at 20% 50%, rgba(59, 158, 255, 0.05) 0%, transparent 50%),
+					radial-gradient(circle at 80% 80%, rgba(59, 158, 255, 0.03) 0%, transparent 50%);
+				pointer-events: none;
+			}
+
+			.home-content {
+				position: relative;
+				z-index: 1;
+			}
+
+			.home-text {
+				padding-right: 40px;
+			}
+
+			.home-badge {
+				display: inline-block;
+				background: rgba(59, 158, 255, 0.15);
+				border: 1px solid var(--electric-blue);
+				color: var(--electric-blue);
+				padding: 8px 16px;
+				border-radius: 20px;
+				font-size: 12px;
+				font-weight: 600;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				margin-bottom: 20px;
+			}
+
+			.home-title {
+				font-size: 48px;
+				font-weight: 800;
+				line-height: 1.2;
+				margin-bottom: 25px;
+				color: var(--light-text);
+				letter-spacing: -1px;
+			}
+
+			.home-title .highlight {
+				color: var(--electric-blue);
+				background: linear-gradient(135deg, var(--electric-blue), var(--accent-blue));
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				background-clip: text;
+			}
+
+			.home-subtitle {
+				font-size: 16px;
+				line-height: 1.8;
+				color: #bbb;
+				margin-bottom: 35px;
+				max-width: 500px;
+			}
+
+			.home-features {
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+				margin-bottom: 30px;
+			}
+
+			.feature-item {
+				display: flex;
+				align-items: center;
+				gap: 12px;
+				font-size: 14px;
+				color: #aaa;
+				font-weight: 500;
+			}
+
+			.feature-item i {
+				color: var(--electric-blue);
+				font-size: 18px;
+				min-width: 25px;
+			}
+
+			.home-cta {
+				padding: 15px 35px !important;
+				font-size: 14px !important;
+				font-weight: 700 !important;
+				border-radius: 5px;
+				transition: all 0.3s ease;
+				box-shadow: 0 10px 30px rgba(59, 158, 255, 0.2);
+			}
+
+			.home-cta:hover {
+				box-shadow: 0 15px 40px rgba(59, 158, 255, 0.4);
+				transform: translateY(-2px);
+			}
+
+			.home-visual {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			.code-block {
+				background: rgba(15, 39, 68, 0.6);
+				border: 2px solid var(--electric-blue);
+				border-radius: 8px;
+				overflow: hidden;
+				box-shadow:
+					0 0 30px rgba(59, 158, 255, 0.2),
+					inset 0 0 20px rgba(59, 158, 255, 0.05);
+				animation: float 3s ease-in-out infinite;
+			}
+
+			@keyframes float {
+				0%, 100% { transform: translateY(0px); }
+				50% { transform: translateY(-10px); }
+			}
+
+			.code-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				background: var(--dark-blue);
+				padding: 12px 16px;
+				border-bottom: 1px solid var(--dark-blue);
+			}
+
+			.code-lang {
+				font-family: 'JetBrains Mono', 'Fira Code', monospace;
+				color: #888;
+				font-size: 12px;
+				font-weight: 600;
+			}
+
+			.code-status {
+				display: inline-block;
+				background: rgba(59, 158, 255, 0.2);
+				color: var(--electric-blue);
+				padding: 3px 8px;
+				border-radius: 3px;
+				font-size: 10px;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+			}
+
+			.code-content {
+				padding: 20px 16px;
+				font-family: 'JetBrains Mono', 'Fira Code', monospace;
+				font-size: 13px;
+				line-height: 1.6;
+				color: #aaa;
+				background: var(--midnight);
+			}
+
+			.code-content p {
+				margin: 0;
+				color: #999;
+			}
+
+			.keyword {
+				color: var(--electric-blue);
+				font-weight: 600;
+			}
+
+			.class-name {
+				color: var(--accent-blue);
+				font-weight: 600;
+			}
+
+			.method-name {
+				color: #90ee90;
+				font-weight: 600;
+			}
+
+			.string {
+				color: #ff9999;
+			}
+
 			/* Responsive */
 			@media (max-width: 768px) {
 				.navbar-brand img {
 					height: 28px;
 					margin-right: 6px;
+				}
+
+				.home-title {
+					font-size: 36px;
+				}
+
+				.home-subtitle {
+					font-size: 14px;
+				}
+
+				.home-text {
+					padding-right: 0;
+					margin-bottom: 40px;
+				}
+
+				.home-visual {
+					margin-top: 30px;
+				}
+
+				.code-block {
+					max-width: 100%;
+				}
+
+				#home {
+					padding-top: 120px !important;
 				}
 			}
 		</style>
@@ -302,17 +516,49 @@
 		<!-- end navigation -->
 		<!-- start home -->
 		<section id="home">
-			<div class="overlay">
+			<div class="home-content">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-1"></div>
-						<div class="col-md-10 wow fadeIn" data-wow-delay="0.3s">
-							<h1 class="text-upper">Crown Logic</h1>
-							<p class="tm-white"><strong>extends SoftwareDev implements Excellence</strong></p>
-							<p class="tm-white">We deliver custom software, mobile applications, and web solutions tailored to your business. Our expert team transforms your ideas into innovative, scalable technology that drives growth.</p>
-							<img src="images/software-img.png" class="img-responsive" alt="Crown Logic Development">
+						<div class="col-md-6 home-text wow fadeInLeft" data-wow-delay="0.3s">
+							<div class="home-badge">Building the Future</div>
+							<h1 class="home-title">
+								Transform Your Vision Into <span class="highlight">Reality</span>
+							</h1>
+							<p class="home-subtitle">At Crown Logic, we don't just build software—we architect solutions. From concept to launch, we combine technical excellence with strategic thinking to deliver products that drive real business impact.</p>
+
+							<div class="home-features">
+								<div class="feature-item">
+									<i class="fa fa-bolt"></i>
+									<span>Lightning-Fast Development</span>
+								</div>
+								<div class="feature-item">
+									<i class="fa fa-shield"></i>
+									<span>Enterprise-Grade Security</span>
+								</div>
+								<div class="feature-item">
+									<i class="fa fa-chart-line"></i>
+									<span>Scalable Growth</span>
+								</div>
+							</div>
+
+							<button class="btn btn-primary btn-lg home-cta" style="margin-top: 30px;"><i class="fa fa-calendar"></i> Schedule Your Free Consultation</button>
 						</div>
-						<div class="col-md-1"></div>
+
+						<div class="col-md-6 home-visual wow fadeInRight" data-wow-delay="0.5s">
+							<div class="code-block">
+								<div class="code-header">
+									<span class="code-lang">crown_logic.dev</span>
+									<span class="code-status">live</span>
+								</div>
+								<div class="code-content">
+									<p><span class="keyword">class</span> <span class="class-name">CrownLogic</span> <span class="keyword">extends</span> <span class="class-name">SoftwareDev</span> {</p>
+									<p style="margin-left: 20px;"><span class="keyword">function</span> <span class="method-name">buildSolutions</span>() {</p>
+									<p style="margin-left: 40px;"><span class="keyword">return</span> <span class="string">"Excellence"</span>;</p>
+									<p style="margin-left: 20px;">}</p>
+									<p>}</p>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
