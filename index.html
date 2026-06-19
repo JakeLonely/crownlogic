@@ -2,12 +2,13 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Crown Logic - Custom Software & Mobile App Development</title>
+		<title>Crown Logic - Custom Software & Mobile App Development for SMBs</title>
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keywords" content="software development, mobile app development, web application, custom software, SMB technology solutions">
-		<meta name="description" content="Crown Logic: extends SoftwareDev implements Excellence. Custom software, mobile app, and web application development for SMBs.">
+		<meta name="keywords" content="software development, mobile app development, web application, custom software, SMB technology solutions, accessible web design">
+		<meta name="description" content="Crown Logic: extends SoftwareDev implements Excellence. Accessible custom software, mobile app, and web application development for SMBs.">
 		<meta name="author" content="Crown Logic">
+		<meta name="format-detection" content="telephone=no">
 		<meta property="og:title" content="Crown Logic - Software Development">
 		<meta property="og:description" content="Expert software, mobile app, and web development solutions for growing businesses.">
 		<meta property="og:type" content="business.business">
@@ -1057,6 +1058,68 @@
 				transform: translateY(-2px);
 			}
 
+			/* Accessibility Features */
+			.skip-to-main {
+				position: absolute;
+				top: -40px;
+				left: 0;
+				background: var(--electric-blue);
+				color: var(--midnight);
+				padding: 8px 12px;
+				text-decoration: none;
+				z-index: 100;
+				font-weight: 700;
+				border-radius: 0 0 4px 0;
+			}
+
+			.skip-to-main:focus {
+				top: 0;
+			}
+
+			/* Focus indicators for keyboard navigation */
+			a:focus, button:focus, input:focus, textarea:focus, select:focus {
+				outline: 3px solid var(--electric-blue);
+				outline-offset: 2px;
+			}
+
+			/* Improve focus visibility */
+			.navbar-default .navbar-nav > li > a:focus {
+				color: var(--electric-blue) !important;
+				outline: 3px solid var(--electric-blue);
+			}
+
+			/* High contrast mode support */
+			@media (prefers-contrast: more) {
+				body {
+					color: #fff;
+				}
+
+				.section-subtitle, .portfolio-description, .benefit-content p, .step-content p {
+					color: #ddd;
+				}
+			}
+
+			/* Reduced motion support */
+			@media (prefers-reduced-motion: reduce) {
+				* {
+					animation-duration: 0.01ms !important;
+					animation-iteration-count: 1 !important;
+					transition-duration: 0.01ms !important;
+				}
+
+				#home::before {
+					animation: none !important;
+				}
+
+				.code-block {
+					animation: none !important;
+				}
+
+				.service-card:hover, .portfolio-card:hover {
+					transition: none !important;
+				}
+			}
+
 			/* Additional Responsive */
 			@media (max-width: 768px) {
 				.section-title {
@@ -1111,27 +1174,30 @@
 
 	</head>
 	<body>
+		<!-- Skip to main content link for accessibility -->
+		<a href="#main-content" class="skip-to-main">Skip to main content</a>
+
 		<!-- start preloader -->
-		<div class="preloader">
+		<div class="preloader" role="status" aria-label="Loading page content">
 			<div class="sk-spinner sk-spinner-rotating-plane"></div>
     	 </div>
 		<!-- end preloader -->
 		<!-- start navigation -->
-		<nav class="navbar navbar-default navbar-fixed-top templatemo-nav" role="navigation">
+		<nav class="navbar navbar-default navbar-fixed-top templatemo-nav" role="navigation" aria-label="Main navigation">
 			<div class="container">
 				<div class="navbar-header">
-					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" aria-label="Toggle navigation" aria-expanded="false" aria-controls="main-navbar">
 						<span class="icon icon-bar"></span>
 						<span class="icon icon-bar"></span>
 						<span class="icon icon-bar"></span>
 					</button>
-					<a href="#home" class="navbar-brand">
-						<img src="images/crown_logic_banner.svg" alt="Crown Logic">
+					<a href="#home" class="navbar-brand" aria-label="Crown Logic - Home">
+						<img src="images/crown_logic_banner.svg" alt="Crown Logic Logo">
 					</a>
 				</div>
-				<div class="collapse navbar-collapse">
+				<div class="collapse navbar-collapse" id="main-navbar">
 					<ul class="nav navbar-nav navbar-right text-uppercase">
-						<li><a href="#home">Home</a></li>
+						<li><a href="#home" aria-current="page">Home</a></li>
 						<li><a href="#services">Services</a></li>
 						<li><a href="#portfolio">Portfolio</a></li>
 						<li><a href="#contact">Contact</a></li>
@@ -1140,34 +1206,36 @@
 			</div>
 		</nav>
 		<!-- end navigation -->
+		<!-- start main content -->
+		<main id="main-content">
 		<!-- start home -->
 		<section id="home">
 			<div class="home-content">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 home-text wow fadeInLeft" data-wow-delay="0.3s">
-							<div class="home-badge">Building the Future</div>
+							<div class="home-badge" aria-label="Current focus area">Building the Future</div>
 							<h1 class="home-title">
 								Transform Your Vision Into <span class="highlight">Reality</span>
 							</h1>
 							<p class="home-subtitle">At Crown Logic, we don't just build software—we architect solutions. From concept to launch, we combine technical excellence with strategic thinking to deliver products that drive real business impact.</p>
 
-							<div class="home-features">
-								<div class="feature-item">
-									<i class="fa fa-bolt"></i>
+							<ul class="home-features" style="list-style: none; padding: 0;">
+								<li class="feature-item">
+									<i class="fa fa-bolt" aria-hidden="true"></i>
 									<span>Lightning-Fast Development</span>
-								</div>
-								<div class="feature-item">
-									<i class="fa fa-shield"></i>
+								</li>
+								<li class="feature-item">
+									<i class="fa fa-shield" aria-hidden="true"></i>
 									<span>Enterprise-Grade Security</span>
-								</div>
-								<div class="feature-item">
-									<i class="fa fa-chart-line"></i>
+								</li>
+								<li class="feature-item">
+									<i class="fa fa-chart-line" aria-hidden="true"></i>
 									<span>Scalable Growth</span>
-								</div>
-							</div>
+								</li>
+							</ul>
 
-							<button class="btn btn-primary btn-lg home-cta" style="margin-top: 30px;"><i class="fa fa-calendar"></i> Schedule Your Free Consultation</button>
+							<button class="btn btn-primary btn-lg home-cta" style="margin-top: 30px;" aria-label="Schedule your free consultation with Crown Logic"><i class="fa fa-calendar" aria-hidden="true"></i> Schedule Your Free Consultation</button>
 						</div>
 
 						<div class="col-md-6 home-visual wow fadeInRight" data-wow-delay="0.5s">
@@ -1191,11 +1259,11 @@
 		</section>
 		<!-- end home -->
 		<!-- start services -->
-		<section id="divider">
+		<section id="divider" aria-labelledby="services-heading">
 			<div class="container">
 				<div class="row" style="margin-bottom: 60px;">
 					<div class="col-md-12 text-center wow fadeIn">
-						<h2 class="section-title">Our Core Services</h2>
+						<h2 class="section-title" id="services-heading">Our Core Services</h2>
 						<p class="section-subtitle">Expert solutions crafted for every platform and challenge</p>
 						<div class="section-divider"></div>
 					</div>
@@ -1243,16 +1311,16 @@
 		<!-- end services -->
 
 		<!-- start why-us -->
-		<section id="services">
+		<section id="services" aria-labelledby="why-us-heading">
 			<div class="container">
 				<div class="row align-items-center">
 					<div class="col-md-5 wow fadeInLeft" data-wow-delay="0.3s">
 						<div class="why-us-image">
-							<img src="images/software-img.png" class="img-responsive" alt="Crown Logic Development">
+							<img src="images/software-img.png" class="img-responsive" alt="Diverse software development team collaborating on innovative solutions">
 						</div>
 					</div>
 					<div class="col-md-7 wow fadeInRight" data-wow-delay="0.3s">
-						<h2 class="section-title" style="text-align: left;">Why Choose Crown Logic?</h2>
+						<h2 class="section-title" id="why-us-heading" style="text-align: left;">Why Choose Crown Logic?</h2>
 						<p class="section-subtitle-left">We understand that every business is unique. That's why we create solutions that fit your specific needs, not cookie-cutter templates.</p>
 
 						<div class="benefit-list">
@@ -1293,11 +1361,11 @@
 		<!-- end why-us -->
 
 		<!-- start process -->
-		<section id="feature1">
+		<section id="feature1" aria-labelledby="process-heading">
 			<div class="container">
 				<div class="row" style="margin-bottom: 60px;">
 					<div class="col-md-12 text-center wow fadeIn">
-						<h2 class="section-title">Our Development Process</h2>
+						<h2 class="section-title" id="process-heading">Our Development Process</h2>
 						<p class="section-subtitle">Proven methodologies for on-time, on-budget, exceptional quality delivery</p>
 						<div class="section-divider"></div>
 					</div>
@@ -1350,11 +1418,11 @@
 		<!-- end process -->
 
 		<!-- start portfolio -->
-		<section id="portfolio">
+		<section id="portfolio" aria-labelledby="portfolio-heading">
 			<div class="container">
 				<div class="row" style="margin-bottom: 60px;">
 					<div class="col-md-12 text-center wow fadeIn">
-						<h2 class="section-title">Our Portfolio</h2>
+						<h2 class="section-title" id="portfolio-heading">Our Portfolio</h2>
 						<p class="section-subtitle">Real projects. Real results. Here's what we've built.</p>
 						<div class="section-divider"></div>
 					</div>
@@ -1380,8 +1448,8 @@
 								<p style="color: #888; font-size: 14px; margin-bottom: 15px;">
 									<em>Portfolio launching soon</em>
 								</p>
-								<button class="btn btn-primary" style="font-size: 12px; padding: 8px 20px;">
-									<i class="fa fa-bell"></i> Notify Me
+								<button class="btn btn-primary" style="font-size: 12px; padding: 8px 20px;" aria-label="Get notified when Crown Logic portfolio is available">
+									<i class="fa fa-bell" aria-hidden="true"></i> Notify Me
 								</button>
 							</div>
 						</div>
@@ -1396,7 +1464,7 @@
 
 							<div class="portfolio-meta">
 								<span class="project-type">
-									<i class="fa fa-star"></i> Future Projects
+									<i class="fa fa-star" aria-hidden="true"></i> Future Projects
 								</span>
 							</div>
 
@@ -1406,8 +1474,8 @@
 								<p style="color: #888; font-size: 14px; margin-bottom: 15px;">
 									<em>Stay tuned for exciting launches</em>
 								</p>
-								<button class="btn btn-primary" style="font-size: 12px; padding: 8px 20px;">
-									<i class="fa fa-bell"></i> Stay Updated
+								<button class="btn btn-primary" style="font-size: 12px; padding: 8px 20px;" aria-label="Stay updated with Crown Logic news and launches">
+									<i class="fa fa-bell" aria-hidden="true"></i> Stay Updated
 								</button>
 							</div>
 						</div>
@@ -1427,11 +1495,11 @@
 							<div class="cta-badge">Next Step</div>
 							<h2 style="margin-bottom: 20px; font-size: 42px; font-weight: 800; letter-spacing: -1px;">Ready to Transform Your Business?</h2>
 							<p style="font-size: 18px; margin-bottom: 40px; color: #ddd; line-height: 1.6;">Let's discuss how Crown Logic can build the perfect solution for your needs. Our team is ready to turn your vision into reality.</p>
-							<button class="btn btn-warning cta-button" style="font-size: 16px; padding: 16px 45px; margin-right: 15px;">
-								<i class="fa fa-calendar"></i> Schedule Your Consultation
+							<button class="btn btn-warning cta-button" style="font-size: 16px; padding: 16px 45px; margin-right: 15px;" aria-label="Schedule your consultation with Crown Logic">
+								<i class="fa fa-calendar" aria-hidden="true"></i> Schedule Your Consultation
 							</button>
-							<button class="btn btn-outline-primary" style="font-size: 16px; padding: 16px 45px;">
-								<i class="fa fa-envelope"></i> Send Us An Email
+							<button class="btn btn-outline-primary" style="font-size: 16px; padding: 16px 45px;" aria-label="Send email to Crown Logic">
+								<i class="fa fa-envelope" aria-hidden="true"></i> Send Us An Email
 							</button>
 						</div>
 					</div>
@@ -1441,12 +1509,12 @@
 		<!-- end cta -->
 
 		<!-- start contact -->
-		<section id="contact">
+		<section id="contact" aria-labelledby="contact-heading">
 			<div class="overlay">
 				<div class="container">
 					<div class="row" style="margin-bottom: 60px;">
 						<div class="col-md-12 text-center wow fadeIn">
-							<h2 class="section-title">Let's Connect</h2>
+							<h2 class="section-title" id="contact-heading">Let's Connect</h2>
 							<p class="section-subtitle">Have a project in mind? Let's discuss how Crown Logic can help bring your vision to life.</p>
 							<div class="section-divider"></div>
 						</div>
@@ -1499,31 +1567,35 @@
 						<div class="col-md-7 wow fadeInRight" data-wow-delay="0.3s">
 							<div class="contact-form-block">
 								<h4 style="color: var(--light-text); margin-bottom: 25px;">Send Us A Message</h4>
-								<form action="https://formspree.io/f/maqzglqj" method="POST">
+								<form action="https://formspree.io/f/maqzglqj" method="POST" novalidate>
 									<div class="form-row">
 										<div class="col-md-6">
-											<input type="text" class="form-control" name="name" placeholder="Your Name" required>
+											<label for="contact-name" style="display: block; color: #aaa; font-size: 13px; margin-bottom: 8px; font-weight: 600;">Your Name <span aria-label="required">*</span></label>
+											<input type="text" class="form-control" id="contact-name" name="name" placeholder="Your Name" required aria-required="true">
 										</div>
 										<div class="col-md-6">
-											<input type="email" class="form-control" name="email" placeholder="Your Email" required>
+											<label for="contact-email" style="display: block; color: #aaa; font-size: 13px; margin-bottom: 8px; font-weight: 600;">Your Email <span aria-label="required">*</span></label>
+											<input type="email" class="form-control" id="contact-email" name="email" placeholder="your@email.com" required aria-required="true">
 										</div>
 									</div>
 									<div class="form-row">
 										<div class="col-md-12">
-											<input type="text" class="form-control" name="company" placeholder="Company (Optional)">
+											<label for="contact-company" style="display: block; color: #aaa; font-size: 13px; margin-bottom: 8px; font-weight: 600;">Company (Optional)</label>
+											<input type="text" class="form-control" id="contact-company" name="company" placeholder="Company Name">
 										</div>
 									</div>
 									<div class="form-row">
 										<div class="col-md-12">
-											<textarea class="form-control" name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
+											<label for="contact-message" style="display: block; color: #aaa; font-size: 13px; margin-bottom: 8px; font-weight: 600;">Message <span aria-label="required">*</span></label>
+											<textarea class="form-control" id="contact-message" name="message" placeholder="Tell us about your project..." rows="5" required aria-required="true"></textarea>
 										</div>
 									</div>
-									<button type="submit" class="btn btn-primary contact-submit">
-										<i class="fa fa-send"></i> Send Message
+									<button type="submit" class="btn btn-primary contact-submit" aria-label="Send your message to Crown Logic">
+										<i class="fa fa-send" aria-hidden="true"></i> Send Message
 									</button>
 								</form>
 								<p style="font-size: 13px; color: #666; margin-top: 15px;">
-									<i class="fa fa-shield"></i> Your information is secure and will never be shared.
+									<i class="fa fa-shield" aria-hidden="true"></i> Your information is secure and will never be shared.
 								</p>
 							</div>
 						</div>
@@ -1532,9 +1604,11 @@
 			</div>
 		</section>
 		<!-- end contact -->
+		</main>
+		<!-- end main content -->
 
 		<!-- start footer -->
-		<footer>
+		<footer role="contentinfo">
 			<div class="container">
 				<div class="row">
 					<p>Copyright © 2026 Crown Logic. All rights reserved. | <a href="#home" style="color: #999;">Back to Top</a></p>
