@@ -17,10 +17,14 @@ $(function() {
 
     /* Allow navigation to external pages (privacy policy, etc)
     -----------------------------------------------*/
-    $('.navbar-collapse a[href^="/"], .navbar-collapse a[href$=".html"]').each(function(){
-        if($(this).attr('href').includes('#')) return; // Skip anchor-only links
-        $(this).on('click', function(e){
-            window.location.href = $(this).attr('href');
-        });
+    $('.navbar-collapse a').each(function(){
+        var href = $(this).attr('href');
+        // Allow navigation for: external pages, home page with sections, or absolute URLs
+        if(href.startsWith('/') || href.endsWith('.html') || href.startsWith('http')) {
+            $(this).on('click', function(e){
+                e.preventDefault();
+                window.location.href = href;
+            });
+        }
     });
 })
